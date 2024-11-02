@@ -14,7 +14,7 @@ function createMap() {
 function addTileLayer(map) {
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 }
 
@@ -66,7 +66,7 @@ function addGeoJsonData(map) {
   };
 
   const frisbeeIcon = L.icon({
-    iconUrl: 'https://img.icons8.com/hatch/64/frisbee.png', // Frisbee icon URL
+    iconUrl: 'https://img.icons8.com/hatch/64/frisbee.png',
     iconSize: [32, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
@@ -89,11 +89,16 @@ function addControls(map) {
   L.control.scale().addTo(map);
   L.control.fullscreen({ position: 'topright' }).addTo(map);
 
-  addNavigationControl(map);
   addDirectionsControl(map);
 }
 
-function addNavigationControl(map) {
-  const navControl = L.control({ position: 'topleft' });
-  navControl.onAdd = function(map) {
-    const div = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');[_{{[_{{{CITATION{{{_1{](https://github.com/maxpou-slides/vuejs-training/tree/635d88467630e3f33a550d6f9c95a37105896715/docs%2Fpart-1.md)[_{{{CITATION{{{_2{](https://github.com/afutseng/MySQL-HBase-SQLBridge/tree/05e9d9b4e8ccef24c91f43270a8cd61df3c3ac61/examples%2Fhbasemyadmin%2Fimport-table.php){CITATION{{{_3{](https://github.com/anandimous/Personal-Website-Nandi/tree/b0542e80fba802a2e67e92e04a270b18a285c2ff/index.php)
+function addDirectionsControl(map) {
+  const dirControl = L.control({ position: 'topleft' });
+  dirControl.onAdd = function(map) {
+    const div = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+    div.innerHTML = '<button class="controls" onclick="alert(\'Directions functionality here!\')">Get Directions</button>';
+    return div;
+  };
+  dirControl.addTo(map);
+}
+
