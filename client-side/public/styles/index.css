@@ -1,0 +1,30 @@
+/* index.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Light blue background color */
+  }
+  
+  header, footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #007bff; /* Blue background for header and footer */
+    color: white;
+  }
+  
+  main {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  button.controls {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners for buttons */
+  }
+  
