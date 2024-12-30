@@ -2,6 +2,7 @@
   "name": "leaflet-map-project",
   "version": "1.0.0",
   "description": "A project to display a Leaflet map with multiple locations",
+<<<<<<< HEAD
   "main": "server-side/server.mjs",
   "scripts": {
     "start": "node server-side/server.mjs",
@@ -9,11 +10,20 @@
     "eslint": "eslint --fix --ext .js,.jsx,.ts,.tsx ./",
     "stylelint": "stylelint '**/*.{css,scss,less}'",
     "prettier": "prettier '**/*' --write",
+=======
+  "main": "app.js",
+  "scripts": {
+    "start": "live-server",
+    "eslint": "eslint --fix --ext  .js,.jsx,.ts,.tsx ./",
+    "stylelint": "stylelint \"**/*.{css,scss,less}\"",
+    "prettier": "prettier **/* --write",
+>>>>>>> 39442ce234902a3cd8b6c8a40e224d700ce98a1e
     "lint": "npm run eslint && npm run stylelint"
   },
   "author": "Dean Macdonald",
   "license": "MIT",
   "dependencies": {
+<<<<<<< HEAD
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@googlemaps/extended-component-library": "^0.6.13",
@@ -23,16 +33,33 @@
     "apicache": "^1.6.3",
     "axios": "^1.7.7",
     "azure-maps-control": "^3.4.0",
+=======
+    "@googlemaps/extended-component-library": "^0.6.13",
+    "@turf/turf": "^7.1.0",
+    "axios": "^1.7.7",
+    "azure-maps-control": "^3.4.0",
+    "babel": "^5.8.38",
+>>>>>>> 39442ce234902a3cd8b6c8a40e224d700ce98a1e
     "bcrypt": "^5.1.1",
     "cache": "^3.0.0",
     "cors": "^2.8.5",
     "d3-geo": "^3.1.1",
     "dotenv": "^16.4.5",
+<<<<<<< HEAD
     "express": "^4.21.2",
     "fast-glob": "^3.3.2",
     "favicon": "^0.0.2",
     "find-java-home": "^2.0.0",
     "fs-extra": "^11.2.0",
+=======
+    "express": "^4.21.1",
+    "fast-glob": "^3.3.2",
+    "favicon": "^0.0.2",
+    "find-java-home": "^2.0.0",
+    "flutter": "^0.0.5",
+    "fs-extra": "^11.2.0",
+    "git": "^0.1.5",
+>>>>>>> 39442ce234902a3cd8b6c8a40e224d700ce98a1e
     "glob": "^11.0.0",
     "google-map-react": "^2.2.1",
     "jsonwebtoken": "^9.0.2",
@@ -40,7 +67,10 @@
     "leaflet-control-geocoder": "^2.4.0",
     "leaflet-draw": "^1.0.4",
     "leaflet-easybutton": "^2.4.0",
+<<<<<<< HEAD
     "leaflet-fullscreen": "^1.0.2",
+=======
+>>>>>>> 39442ce234902a3cd8b6c8a40e224d700ce98a1e
     "leaflet.fullscreen": "^3.0.2",
     "leaflet.heat": "^0.2.0",
     "leaflet.markercluster": "^1.5.3",
@@ -52,10 +82,16 @@
     "nodemon": "^3.1.7",
     "passport": "^0.7.0",
     "path": "^0.12.7",
+<<<<<<< HEAD
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^7.1.1",
+=======
+    "postman": "^0.2.0",
+    "pub": "^0.2.0",
+    "react-leaflet": "^4.2.1",
+>>>>>>> 39442ce234902a3cd8b6c8a40e224d700ce98a1e
     "recursive-readdir": "^2.2.3",
     "script": "^0.1.4",
     "server": "^0.0.3",
@@ -67,6 +103,7 @@
     "@applint/spec": "^1.0.0",
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
+<<<<<<< HEAD
     "@babel/preset-react": "^7.26.3",
     "babel-loader": "^9.2.1",
     "babel-plugin-module-resolver": "^5.0.2",
@@ -80,5 +117,14 @@
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^4.7.3"
+=======
+    "babel-loader": "^9.2.1",
+    "eslint": "^8.57.1",
+    "live-server": "^1.2.0",
+    "prettier": "^2.1.0",
+    "stylelint": "^14.0.0",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+>>>>>>> 39442ce234902a3cd8b6c8a40e224d700ce98a1e
   }
 }
