@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["client-side/src/components/*"],
+      "@utils/*": ["client-side/src/utils/*"],
+      "@styles/*": ["client-side/src/styles/*"]
+    },
+    "sourceMap": true,
+    "incremental": true,
+    "jsx": "react-jsx",
+    "lib": ["dom", "es6", "esnext.asynciterable"]
+  },
+  "include": [
+    "client-side/src/**/*",
+    "tests/utils/**/*",
+    "server-side/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

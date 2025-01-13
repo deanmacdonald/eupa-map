@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+	  {
+		"type": "shell",
+		"command": "yarn",
+		"args": ["deploy"],
+		"problemMatcher": [],
+		"label": "yarn: deploy",
+		"detail": "gh-pages -d dist"
+	  }
+	]
+  }
+  

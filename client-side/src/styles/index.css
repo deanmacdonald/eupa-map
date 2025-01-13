@@ -1,0 +1,71 @@
+/* Global styles for the entire application */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #155186; /* Blue background color */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+}
+
+header, footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #42962a; /* Green background for header and footer */
+  color: white;
+}
+
+button.controls {
+  background-color: #3a9545;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners for buttons */
+}
+
+@media (forced-colors: active) {
+  /* Styles for forced colors mode */
+  .your-element {
+    forced-color-adjust: none;
+  }
+  .your-element {
+    color: CanvasText;
+    background-color: Canvas;
+  }
+}
+
+/* Map styles */
+#map {
+  height: 100vh; /* Full height of the viewport */
+  width: 100%;
+}
+
+/* Main content area styles */
+main {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  flex: 1; /* This ensures main content takes up the remaining space */
+}
+
+/* Map specific styles */
+#map-container {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-container {
+  height: 600px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.leaflet-control-zoom {
+  margin-top: 20px;
+}
+
+.leaflet-control-fullscreen {
+  margin-top: 10px;
+}

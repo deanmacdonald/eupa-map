@@ -1,0 +1,27 @@
+/* MapPage.css */
+
+#map-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.leaflet-container {
+  height: 600px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.leaflet-control-zoom {
+  margin-top: 20px;
+}
+
+.leaflet-control-fullscreen {
+  margin-top: 10px;
+}
+
+/* Added styles for the map div */
+#map {
+  height: 100vh; /* or any other height you prefer */
+  width: 100%;
+}

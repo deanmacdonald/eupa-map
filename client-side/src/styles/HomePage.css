@@ -1,0 +1,43 @@
+/* HomePage.css */
+
+main {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  flex: 1; /* This ensures main content takes up the remaining space */
+}
+
+button.controls {
+  background-color: #3a9545;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners for buttons */
+}
+
+/* Ensure you have the map styles as well */
+#map-container {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-container {
+  height: 600px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.leaflet-control-zoom {
+  margin-top: 20px;
+}
+
+.leaflet-control-fullscreen {
+  margin-top: 10px;
+}
+
+/* Added styles for the map div */
+#map {
+  height: 100vh; /* or any other height you prefer */
+  width: 100%;
+}

@@ -10,9 +10,8 @@ import 'leaflet.fullscreen';
 import 'leaflet.markercluster';
 import 'leaflet-control-geocoder';
 import 'leaflet-minimap';
-import '../../client-side/public/styles/MapPage.css'; // Ensure this path is correct
 
-const MapPage = () => {
+const Map = () => {
   useEffect(() => {
     // Initialize the map
     const map = L.map('map').setView([51.505, -0.09], 13);
@@ -42,16 +41,10 @@ const MapPage = () => {
   }, []);
 
   return (
-    <div>
-      <header>
-        <h1>EUAP Map Locations</h1>
-      </header>
-      <div id="map" style={{ height: 'calc(100vh - 100px)' }}></div>
-      <footer>
-        <p>All Rights Reserved 2025</p>
-      </footer>
+    <div data-testid="map" id="map" style={{ height: 'calc(100vh - 100px)' }}>
+      {/* The map will render here */}
     </div>
   );
 };
 
-export default MapPage;
+export default Map;

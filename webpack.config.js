@@ -1,13 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // Add this line to set the mode
-  entry: './src/index.js',
+  entry: './client-side/src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'client-side/build'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -15,41 +13,24 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        },
+          loader: 'babel-loader'
+        }
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-      },
-    ],
+        use: ['style-loader', 'css-loader']
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './client-side/public/index.html',
-      filename: 'index.html',
-    }),
-    new FileManagerPlugin({
-      events: {
-        onEnd: {
-          copy: [
-            { source: 'client-side/public/styles', destination: 'dist/styles' },
-          ],
-        },
-      },
-    }),
+      filename: 'index.html'
+    })
   ],
-  resolve: {
-    extensions: ['.js', '.jsx'],
-    alias: {
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@pages': path.resolve(__dirname, 'src/pages'),
-      '@styles': path.resolve(__dirname, 'client-side/public/styles'),
-    },
-  },
+  devServer: {
+    contentBase: path.join(__dirname, 'client-side/build'),
+    compress: true,
+    port: 3000
+  }
 };
-
