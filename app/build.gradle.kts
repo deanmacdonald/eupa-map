@@ -1,38 +1,40 @@
 plugins {
-    kotlin("jvm") version "1.8.0"
-    id("org.springframework.boot") version "2.5.6"
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    id("com.github.johnrengelman.shadow") version "7.0.0"
-    // id("com.diffplug.spotless") version "5.14.3" // Comment out for now
-    id("io.gitlab.arturbosch.detekt") version "1.18.1"
+    kotlin("jvm") version "1.8.21"
+    id("org.springframework.boot") version "3.1.0"
+    id("io.spring.dependency-management") version "1.1.0"
+    id("com.github.johnrengelman.shadow") version "8.0.0"
+    id("io.gitlab.arturbosch.detekt") version "1.23.0"
     id("jacoco")
-    id("com.google.protobuf") version "0.8.17" // Ensure consistency
-    id("application")
+    id("com.google.protobuf") version "0.9.0"
+    application
 }
 
 repositories {
     mavenCentral()
 }
 
+val guavaVersion = "31.1-jre"
+val protobufVersion = "3.21.6"
+
 dependencies {
-    implementation(libs.guava)
+    implementation("com.google.guava:guava:$guavaVersion")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation("org.springframework.boot:spring-boot-starter")
-    implementation("com.google.protobuf:protobuf-java:3.17.3")
+    implementation("com.google.protobuf:protobuf-java:$protobufVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 testing {
     suites {
         val test by getting(JvmTestSuite::class) {
-            useKotlinTest("2.0.21")
+            useKotlinTest()
         }
     }
 }
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17)) // Use supported version
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -41,7 +43,7 @@ application {
 }
 
 detekt {
-    toolVersion = "1.18.1"
+    toolVersion = "1.23.0"
     source = files("src/main/kotlin")
     config = files("detekt-config.yml")
 }
@@ -50,10 +52,9 @@ jacoco {
     toolVersion = "0.8.7"
 }
 
-// Ensure consistent protobuf configuration
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:3.17.3"
+        artifact = "com.google.protobuf:protoc:$protobufVersion"
     }
     generateProtoTasks {
         all().forEach { task ->
@@ -66,10 +67,10 @@ protobuf {
     }
 }
 
-// Temporarily exclude Spotless
-// spotless {
-//    kotlin {
-//       target("**/*.kt")
-//       ktlint("0.41.0")
-//    }
-// }
+tasks.register("exampleTask") {
+    doLast {
+        tasks.forEach { task ->
+            println("Executing task: ${task.name}")
+        }
+    }
+}
